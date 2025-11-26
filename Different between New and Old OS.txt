@@ -1,0 +1,11 @@
+Lab 4704 
+(1)  FR1 to FR25 (OLD RPi 4)Loaded with old Raspbian OS
+(2)  FR26 to FR40 (New RPi 4) Loaded with new Raspbian OS
+
+Pls note the new and old RPi 4 are not compatible with each other.  It must be loaded with the correct OS.   
+
+Program for Lab10, Lab11 and lab12 need to be edited.
+
+#Pls mask off according to old/new Raspbian
+#recognizer = cv2.face.createLBPHFaceRecognizer() #Use in Old Raspbian
+recognizer = cv2.face.LBPHFaceRecognizer_create() #Use in New Raspbian

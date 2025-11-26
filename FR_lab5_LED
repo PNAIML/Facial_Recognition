@@ -1,0 +1,28 @@
+#Lab5 LED
+
+import RPi.GPIO as GPIO	#import GPIO library to use GPIO pins for RPi
+import time
+
+GPIO.setwarnings(False)	#To disable warnings
+
+led1_pin = 24	#Set pin 24 for led1
+led2_pin = 25	#Set pin 25 for led2
+
+GPIO.setmode(GPIO.BCM) 	#Inform library which pin numbering system in use
+GPIO.setup(led1_pin, GPIO.OUT)	#initialize pin 24 as output pin
+GPIO.setup(led2_pin, GPIO.OUT)	#initialize pin 25 as output pin
+
+try:
+    while True:	#forever loop
+        GPIO.output(led1_pin, True)	#turn on led1
+        GPIO.output(led2_pin, False)	#turn off led2
+        time.sleep(1)	#wait for 1 second
+        GPIO.output(led1_pin, False)	#turn off led1
+        GPIO.output(led2_pin, True)	#turn on led2
+        time.sleep(1)	#wait for 1 second
+except keyboardInterrupt:
+    pass
+
+finally:
+    GPIO.cleanup()
+        
